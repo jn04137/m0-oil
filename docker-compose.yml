@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_m0-oil
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: m0_database
+      MYSQL_USER: m0_user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080

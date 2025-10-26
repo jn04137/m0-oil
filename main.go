@@ -4,8 +4,11 @@ import (
 	"log"
 	"context"
 	"net/http"
+
 	"go.uber.org/fx"
 	"github.com/go-chi/chi/v5"
+
+	"thdr/m0-oil/config"
 )
 
 // Beginning of handler stuff 
@@ -73,6 +76,7 @@ func main() {
 	fx.New(
 		fx.Provide(
 			NewAppRouter,
+			config.NewDBConnection,
 			NewHandler,
 			NewServer,
 		),

@@ -5,17 +5,17 @@ import (
 )
 
 type CarRepository struct {
-	DBConn *sqlx.DB 
+	db *sqlx.DB 
 }
 
-func NewCarRepository() *CarRepository {
-	return &CarRepository{}
+func NewCarRepository(DB *sqlx.DB) *CarRepository {
+	return &CarRepository{
+		db: DB,
+	}
 }
 
-func (cr CarRepository) CreateCar() {
-
+func (r CarRepository) CreateCar() {
 }
 
-func (cr CarRepository) UpdateCar() {
-
+func (r CarRepository) UpdateCar() {
 }
